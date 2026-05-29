@@ -141,9 +141,21 @@
 
   .cal-event.ev-bogang-green{background:var(--green);opacity:.85;}
   .cal-event.ev-bogang-blue{background:var(--blue);opacity:.85;}
+  .cal-event.ev-gold{background:var(--gold);color:var(--white);}
+  .cal-event.ev-holiday{background:var(--red);opacity:.7;}
   .wk-group{margin-bottom:12px;}
   .wk-group-label{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px;}
   .wk-group-dates{display:flex;flex-wrap:wrap;gap:6px;}
+  .notice-row{display:flex;gap:14px;align-items:flex-start;}
+  .notice-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .notice-icon svg{width:18px;height:18px;fill:none;stroke:var(--white);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+  .notice-body{flex:1;}
+  .notice-date{font-size:11px;font-weight:700;letter-spacing:.5px;display:block;margin-bottom:3px;}
+  .notice-title{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;line-height:1.4;}
+  .notice-desc{font-size:12.5px;color:var(--txt2);line-height:1.75;}
+  .notice-format{background:var(--cream);border-radius:8px;padding:10px 14px;margin-top:10px;display:flex;align-items:center;gap:10px;}
+  .notice-format-label{font-size:10px;font-weight:700;color:var(--txt3);letter-spacing:1px;white-space:nowrap;}
+  .notice-format-val{font-size:13px;font-weight:700;color:var(--navy);}
 </style>
 </head>
 <body>
@@ -181,9 +193,16 @@
     <div id="cal-month" class="cal-grid">
       <div class="cal-day-label sun">일</div><div class="cal-day-label">월</div><div class="cal-day-label">화</div><div class="cal-day-label">수</div><div class="cal-day-label">목</div><div class="cal-day-label">금</div><div class="cal-day-label sat">토</div>
       <div class="cal-cell empty"></div>
+      <div class="cal-cell empty"></div>
+      <div class="cal-cell empty"></div>
+      <div class="cal-cell empty"></div>
+      <div class="cal-cell empty"></div>
+      <div class="cal-cell empty"></div>
+      <div class="cal-cell" style="background:var(--cream);opacity:.8;"><div class="day-num sat" style="opacity:.7;">5/30</div><span class="cal-event ev-bogang-green">엄궁중 보강</span><span class="cal-event ev-bogang">고등부 보강</span></div>
+      <div class="cal-cell empty"></div>
       <div class="cal-cell"><div class="day-num">1</div></div>
       <div class="cal-cell"><div class="day-num">2</div></div>
-      <div class="cal-cell"><div class="day-num">3</div></div>
+      <div class="cal-cell"><div class="day-num">3</div><span class="cal-event ev-gold">시험대비 수업</span><span class="cal-event ev-holiday">대체공휴일</span></div>
       <div class="cal-cell"><div class="day-num">4</div></div>
       <div class="cal-cell"><div class="day-num">5</div></div>
       <div class="cal-cell"><div class="day-num sat">6</div><span class="cal-event ev-bogang-green">엄궁중 보강</span><span class="cal-event ev-bogang-blue">학장중 보강</span><span class="cal-event ev-bogang">고등부 보강</span></div>
@@ -215,13 +234,39 @@
       <div class="cal-cell empty"></div>
       <div class="cal-cell empty"></div>
       <div class="cal-cell empty"></div>
-      <div class="cal-cell"><div class="day-num" style="color:var(--txt3);font-size:10px;">7/1</div><span class="cal-event ev-orange">주례여고</span><span class="cal-event ev-red">경남고</span><span class="cal-event ev-pink">서여고</span></div>
-      <div class="cal-cell"><div class="day-num" style="color:var(--txt3);font-size:10px;">7/2</div><span class="cal-event ev-orange">주례여고</span><span class="cal-event ev-red">경남고</span><span class="cal-event ev-pink">서여고</span><span class="cal-event ev-purple">구덕고</span></div>
-      <div class="cal-cell"><div class="day-num" style="color:var(--txt3);font-size:10px;">7/3</div><span class="cal-event ev-orange">주례여고</span><span class="cal-event ev-red">경남고</span><span class="cal-event ev-pink">서여고</span><span class="cal-event ev-purple">구덕고</span></div>
-      <div class="cal-cell"><div class="day-num" style="color:var(--txt3);font-size:10px;">7/4</div><span class="cal-event ev-purple">구덕고</span></div>
-      <div class="cal-cell"><div class="day-num" style="color:var(--txt3);font-size:10px;">7/5</div><span class="cal-event ev-purple">구덕고</span></div>
-      <div class="cal-cell"><div class="day-num" style="color:var(--txt3);font-size:10px;">7/6</div><span class="cal-event ev-purple">구덕고</span></div>
-      <div class="cal-cell"><div class="day-num" style="color:var(--txt3);font-size:10px;">7/7</div><span class="cal-event ev-purple">구덕고</span></div>
+      <div class="cal-cell" style="background:var(--cream);opacity:.85;"><div class="day-num" style="color:var(--txt3);">7/1</div><span class="cal-event ev-orange">주례여고</span><span class="cal-event ev-red">경남고</span><span class="cal-event ev-pink">서여고</span></div>
+      <div class="cal-cell" style="background:var(--cream);opacity:.85;"><div class="day-num" style="color:var(--txt3);">7/2</div><span class="cal-event ev-orange">주례여고</span><span class="cal-event ev-red">경남고</span><span class="cal-event ev-pink">서여고</span><span class="cal-event ev-purple">구덕고</span></div>
+      <div class="cal-cell" style="background:var(--cream);opacity:.85;"><div class="day-num" style="color:var(--txt3);">7/3</div><span class="cal-event ev-holiday">대체휴일</span><span class="cal-event ev-orange">주례여고</span><span class="cal-event ev-red">경남고</span><span class="cal-event ev-pink">서여고</span><span class="cal-event ev-purple">구덕고</span></div>
+      <div class="cal-cell" style="background:var(--cream);opacity:.85;"><div class="day-num sat" style="opacity:.7;">7/4</div><span class="cal-event ev-purple">구덕고</span></div>
+      <div class="cal-cell" style="background:var(--cream);opacity:.85;"><div class="day-num sun" style="opacity:.7;">7/5</div><span class="cal-event ev-purple">구덕고</span></div>
+      <div class="cal-cell" style="background:var(--cream);opacity:.85;"><div class="day-num" style="color:var(--txt3);">7/6</div><span class="cal-event ev-purple">구덕고</span></div>
+      <div class="cal-cell" style="background:var(--cream);opacity:.85;"><div class="day-num" style="color:var(--txt3);">7/7</div><span class="cal-event ev-purple">구덕고</span></div>
+    </div>
+  </div>
+
+    <div class="divider"><span>공지사항</span></div>
+  <div class="card">
+    <div class="notice-row">
+      <div class="notice-icon" style="background:var(--gold);"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg></div>
+      <div class="notice-body">
+        <span class="notice-date" style="color:var(--gold);">6/3(수)</span>
+        <h3 class="notice-title">대체공휴일 시험대비 수업 안내</h3>
+        <p class="notice-desc">대체공휴일이지만 시험대비 기간으로 주말보강과 동일하게 운영합니다.</p>
+        <div class="notice-format">
+          <span class="notice-format-label">운영 방식</span>
+          <span class="notice-format-val">수업 2시간 + 개인공부 2시간(자율)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="notice-row">
+      <div class="notice-icon" style="background:var(--red);"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="10" y1="15" x2="10" y2="9"/><line x1="14" y1="15" x2="14" y2="9"/></svg></div>
+      <div class="notice-body">
+        <span class="notice-date" style="color:var(--red);">7/3(금)</span>
+        <h3 class="notice-title">중·고등부 대체 휴일 안내</h3>
+        <p class="notice-desc">6/3(수) 대체공휴일 보충 수업 진행에 따른 대체 휴일입니다. 7월 3일(금)은 중·고등부 수업이 진행되지 않습니다.</p>
+      </div>
     </div>
   </div>
 
@@ -334,6 +379,7 @@
 <div class="wk-group">
 <div class="wk-group-label">고등부 보강</div>
 <div class="wk-group-dates">
+<span class="wk-chip">5/30(토)</span>
 <span class="wk-chip">6/6(토)</span>
 <span class="wk-chip">6/13(토)</span>
 <span class="wk-chip">6/20(토)</span>
