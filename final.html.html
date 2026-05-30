@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>과사람 자사관 프로젝트 | 2026 1학기 기말고사 대비</title>
+<style>
+  :root{
+    --bg:#0a0a0a; --panel:#111; --line:#2a2a2a; --text:#eaeaea; --mute:#9a9a9a;
+    --gold:#d4af37; --gold-soft:#b89527; --accent:#f5e6a8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:"Pretendard","Noto Sans KR",system-ui,-apple-system,sans-serif;line-height:1.65;letter-spacing:-.01em;font-weight:300}
+  .wrap{max-width:1080px;margin:0 auto;padding:48px 24px}
+  .label{color:var(--gold);font-size:12px;letter-spacing:.35em;font-weight:500;text-transform:uppercase}
+  h1,h2,h3,h4{font-weight:300;letter-spacing:-.02em}
+  h1{font-size:clamp(28px,5vw,52px);line-height:1.2;margin:18px 0 14px}
+  h1 b{font-weight:700;color:var(--gold)}
+  h2{font-size:clamp(22px,3.5vw,34px);margin:8px 0 10px}
+  h3{font-size:clamp(18px,2.6vw,24px);margin:4px 0 6px;color:var(--accent)}
+  p{color:var(--mute);font-size:15px}
+  .hero{border-bottom:1px solid var(--line);padding-bottom:42px;margin-bottom:48px}
+  .hero .yr{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:4px 12px;border-radius:99px;font-size:12px;margin-bottom:18px}
+  .hero p.lead{color:#cfcfcf;font-size:17px;margin-top:6px;max-width:720px}
+  .section{margin:56px 0}
+  .section-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:28px}
+  .section-head .num{font-size:38px;color:var(--gold);font-weight:200;letter-spacing:-.04em}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:780px){.grid2,.grid3,.grid4{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:24px}
+  .card .tag{color:var(--gold);font-size:11px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:10px}
+  .card .en{color:var(--gold-soft);font-style:italic;font-size:13px;margin-bottom:8px}
+  .card ul{list-style:none;margin-top:14px}
+  .card li{padding:8px 0;border-top:1px solid #1d1d1d;color:#d8d8d8;font-size:14.5px;display:flex;gap:10px}
+  .card li::before{content:"◆";color:var(--gold);font-size:10px;margin-top:7px}
+  .week{position:relative;background:linear-gradient(180deg,#121212 0%,#0c0c0c 100%);border:1px solid var(--line);border-left:3px solid var(--gold);padding:22px 24px;border-radius:4px}
+  .week .d{color:var(--gold);font-size:12px;letter-spacing:.25em;font-weight:600}
+  .week h4{font-size:19px;color:var(--accent);margin:6px 0 12px;font-weight:400}
+  .week .items{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 22px;margin-top:8px}
+  .week .items div{font-size:13.5px;color:#cfcfcf;padding:4px 0;border-bottom:1px dashed #1f1f1f}
+  .week .items div b{color:#fff;font-weight:500;margin-right:6px}
+  @media(max-width:680px){.week .items{grid-template-columns:1fr}}
+  table{width:100%;border-collapse:collapse;background:#0e0e0e;border:1px solid var(--line);border-radius:4px;overflow:hidden;font-size:13.5px}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #1a1a1a}
+  th{background:#161616;color:var(--gold);font-weight:500;letter-spacing:.05em;font-size:12px;text-transform:uppercase}
+  td{color:#dcdcdc}
+  td .dday{color:var(--gold);font-weight:600;font-size:12px;margin-left:6px}
+  .chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .chip{background:#161616;border:1px solid #262626;color:#e4e4e4;padding:6px 12px;border-radius:99px;font-size:12.5px}
+  .chip b{color:var(--gold);font-weight:600;margin-right:4px}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+  @media(max-width:780px){.pillars{grid-template-columns:1fr}}
+  .pillar{text-align:center;padding:28px 18px;border:1px solid var(--line);border-radius:4px;background:#0e0e0e}
+  .pillar .no{font-size:36px;color:var(--gold);font-weight:200;display:block}
+  .pillar h4{font-size:18px;color:var(--accent);margin:8px 0 6px;font-weight:400}
+  .pillar p{font-size:13.5px;color:#bdbdbd}
+  .closing{text-align:center;margin:64px 0 24px;padding:40px 24px;border:1px solid var(--gold);border-radius:6px;background:linear-gradient(180deg,#101010,#0a0a0a)}
+  .closing p.tag{color:var(--gold);font-size:12px;letter-spacing:.35em;font-weight:500;text-transform:uppercase;margin-bottom:12px}
+  .closing h2{font-size:clamp(20px,3vw,28px);color:#fff;line-height:1.5}
+  .closing h2 b{color:var(--gold);font-weight:600}
+  .closing p.sub{margin-top:14px;color:#bbb;font-size:14.5px}
+  footer{text-align:center;padding:30px;color:#666;font-size:13px;letter-spacing:.2em;border-top:1px solid var(--line);margin-top:48px}
+  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 0}
+  @media(max-width:680px){.stat-row{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:#0e0e0e;border:1px solid var(--line);padding:14px;text-align:center;border-radius:4px}
+  .stat .n{color:var(--gold);font-size:24px;font-weight:300;display:block}
+  .stat .l{color:#9a9a9a;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;margin-top:4px}
+  .note{background:#0e0e0e;border:1px dashed #2a2a2a;padding:14px 16px;border-radius:4px;color:#b8b8b8;font-size:13.5px;margin-top:14px}
+  .note b{color:var(--gold)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ───────── HERO ───────── -->
+  <header class="hero">
+    <span class="yr">자사관 프로젝트 · 2026</span>
+    <p class="label">PROJECT · GWASARAM · JASAKWAN</p>
+    <h1>1학기 <b>기말고사 대비</b> 4주 로드맵</h1>
+    <p class="lead">진단 — 보완 — 실전 — 직전보강.</p>
+  </header>
+
+  <!-- ───────── 투트랙 시스템 ───────── -->
+  <section class="section">
+    <div class="section-head"><span class="num">01</span><div><p class="label">System</p><h2>투트랙 시스템</h2></div></div>
+    <div class="grid2">
+      <div class="card">
+        <p class="tag">Track 01</p>
+        <h3>개별 맞춤 학습</h3>
+        <p class="en">Diagnosis &amp; Care</p>
+        <p style="margin-top:8px">학생별 수준과 상황에 맞춘 데이터 기반 밀착 관리</p>
+        <ul>
+          <li>미리보는 기말고사 (중2·중3)</li>
+          <li>약점 보완 개별 클리닉 (1차·2차)</li>
+          <li>시험 직전 보강</li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="tag">Track 02</p>
+        <h3>내신 특화 수업</h3>
+        <p class="en">Advanced Skill Building</p>
+        <p style="margin-top:8px">최상위권 고득점을 위한 핵심 수학적 역량 강화</p>
+        <ul>
+          <li>서술형 완벽 대비 집중 수업 (주 1회)</li>
+          <li>내신 대비 기출 분석 특화 수업</li>
+          <li>강남 3구·인근 학교 기출 변형 풀이</li>
+          <li>오르조 학습 앱 기반 오답 실시간 관리</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── 4주 로드맵 (NEW) ───────── -->
+  <section class="section">
+    <div class="section-head"><span class="num">02</span><div><p class="label">4-Week Roadmap</p><h2>4주 프로세스</h2></div></div>
+    <p style="margin-bottom:18px">5월 27일 — 7월 3일. 학교별 시험일을 기준으로 D-28부터 D-day까지 주차별 목표·과제·산출물을 설계했습니다.</p>
+
+    <div style="display:flex;flex-direction:column;gap:16px">
+
+      <div class="week">
+        <span class="d">WEEK 01 · D-28 ~ D-22</span>
+        <h4>진단 &amp; 핵심개념 정리</h4>
+        <div class="items">
+          <div><b>주차</b>진단평가 실시 주</div>
+          <div><b>월~금</b>RCC(개별맞춤)으로 학년별 핵심단원 리뷰</div>
+          <div><b>과제</b>빈출 교재 1주차 분량 (약 150문항)</div>
+          <div><b>산출물</b>학생별 취약 단원 카드 (시트 자동 집계)</div>
+        </div>
+      </div>
+
+      <div class="week">
+        <span class="d">WEEK 02 · D-21 ~ D-15</span>
+        <h4>빈출 유형 + 1차 서술형 — 6/6(토) ~ 6/12(금)</h4>
+        <div class="items">
+          <div><b>토</b>6/6 — 미리보는 기말고사 1회차 (3시간)</div>
+          <div><b>오전조</b>10:00~13:00 / <b>오후조</b>14:00~17:00</div>
+          <div><b>서술형 대비</b>(클래스인)</div>
+          <div><b>분석</b>1차 클리닉 대상자 자동 선별 (80점 미만)</div>
+        </div>
+      </div>
+
+      <div class="week">
+        <span class="d">WEEK 03 · D-14 ~ D-8</span>
+        <h4>실전 모의고사 + 1차 클리닉 — 6/13(토) ~ 6/19(금)</h4>
+        <div class="items">
+          <div><b>토</b>6/13 — 실전 모의고사 1회차</div>
+          <div><b>월~금</b>학교별 기출 변형 풀이 (인근 학교 과년도)</div>
+          <div><b>산출물</b>실전 모의 1회차 점수표 + 단원별 정답률</div>
+        </div>
+      </div>
+
+      <div class="week">
+        <span class="d">WEEK 04 · D-7 ~ D-day</span>
+        <h4>직전보강 + 학교별 맞춤 — 6/20(토) ~ 7/3(금)</h4>
+        <div class="items">
+          <div><b>토</b>6/20 — 실전 모의고사 2회차 + 2차 클리닉</div>
+          <div><b>토</b>6/27 — 직전보강 모의고사 (서술형 포함)</div>
+          <div><b>케어</b>개별 직전보강</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="note"><b>운영 원칙</b> · 실전 풀이·서술형·1:1 피드백에 100% 집중. 빈출 교재는 주 150문항 × 3주 = 450문항 기준.</div>
+  </section>
+
+  <!-- ───────── 학교별 시험 일정 ───────── -->
+  <section class="section">
+    <div class="section-head"><span class="num">03</span><div><p class="label">School Schedule</p><h2>학교별 1학기 기말 일정</h2></div></div>
+    <p style="margin-bottom:14px">71명의 학생이 다니는 31개교 시험일정 — 시험일 기준 D-1 직전보강·시험지 수거·결과 분석을 학교별로 분산 운영합니다.</p>
+
+    <table>
+      <thead>
+        <tr><th>일정</th><th>학교</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>6/22 (월) ~ 6/24 (수)<span class="dday">D-26</span></td><td>동래여자중</td></tr>
+        <tr><td>6/23 (화) ~ 6/25 (목)</td><td>해강중 · 금명중 · 개림중</td></tr>
+        <tr><td>6/24 (수) ~ 6/26 (금)</td><td>백양중</td></tr>
+        <tr><td>6/25 (목) ~ 6/26 (금)</td><td>동래중</td></tr>
+        <tr><td>6/29 (월) ~ 7/1 (수)<span class="dday">D-33</span></td><td>화명중 · 동해중 · 여명중 · 항도중 · 부곡중 · 부산진중 · 장전중</td></tr>
+        <tr><td>6/29 (월) ~ 6/30 (화)</td><td>학산여자중 · 인지중</td></tr>
+        <tr><td>6/30 (화) ~ 7/2 (목)</td><td>반안중 · 부산중 · 동평여자중</td></tr>
+        <tr><td>7/1 (수) ~ 7/3 (금)<span class="dday">D-37</span></td><td>남산중 · 명진중 · 부산동중 · 사직여자중 · 유락여자중</td></tr>
+        <tr><td>7/1 (수) ~ 7/2 (목)</td><td>사직중 · 부곡여자중</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ───────── STEP 1 ───────── -->
+  <section class="section">
+    <div class="section-head"><span class="num">04</span><div><p class="label">Step 1</p><h2>미리보는 기말고사</h2></div></div>
+    <div class="grid2">
+      <div class="card">
+        <h3>시행 개요</h3>
+        <p class="en">Pre-exam Simulation</p>
+        <ul>
+          <li>대상: 중학교 2·3학년 전원</li>
+          <li>시행일: 6월 6일 (토) — Week 2</li>
+          <li>오프라인 등원 / 온라인 클래스인 병행</li>
+          <li>오전 10:00~13:00 · 오후 14:00~17:00 택일</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>시간표 (3시간 풀세션)</h3>
+        <p class="en">Time Block</p>
+        <table style="margin-top:8px">
+          <thead><tr><th>TIME</th><th>CONTENT</th></tr></thead>
+          <tbody>
+            <tr><td>10:00–10:40</td><td>인근 지역 2025년 기출 1</td></tr>
+            <tr><td>10:50–11:30</td><td>인근 지역 2025년 기출 2</td></tr>
+            <tr><td>11:40–12:20</td><td>클래스인 서술형 문제 풀이</td></tr>
+            <tr><td>12:30–13:00</td><td>틀린 문제 완벽 분석 · 1:1 피드백</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── STEP 2 ───────── -->
+  <section class="section">
+    <div class="section-head"><span class="num">05</span><div><p class="label">Step 2</p><h2>개별 클리닉 &amp; 직전 보강</h2></div></div>
+    <p style="margin-bottom:14px">미리보는 기말고사 데이터 분석 결과에 따라 개별 등원 대상자 선정 (약점 집중 케어).</p>
+    <div class="grid3">
+      <div class="card">
+        <p class="tag">6월 13일 (토)</p>
+        <h3>1차 개별 클리닉</h3>
+        <p style="margin-top:8px;font-size:14px;color:#cfcfcf">미리보는 기말고사 결과에서 뚜렷한 약점 단원이 있거나 80점 미만인 학생 대상</p>
+        <p style="margin-top:10px;color:var(--gold);font-size:13px">10:00 – 13:00</p>
+      </div>
+      <div class="card">
+        <p class="tag">6월 20일 (토)</p>
+        <h3>2차 개별 클리닉</h3>
+        <p style="margin-top:8px;font-size:14px;color:#cfcfcf">1차 클리닉 이후에도 보완이 필요하거나 학부모·학생 요청이 있는 경우 추가 진행</p>
+        <p style="margin-top:10px;color:var(--gold);font-size:13px">10:00 – 13:00</p>
+      </div>
+      <div class="card">
+        <p class="tag">학교별 D-1</p>
+        <h3>최종 직전 보강</h3>
+        <p style="margin-top:8px;font-size:14px;color:#cfcfcf">시험 전날 마지막 점검 — 학교별 시험 범위·예상 출제 유형 자료로 제공</p>
+        <p style="margin-top:10px;color:var(--gold);font-size:13px">자료 발송 · 카카오톡</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── SPECIAL 1 ───────── -->
+  <section class="section">
+    <div class="section-head"><span class="num">06</span><div><p class="label">Special 1</p><h2>서술형 대비 특화 수업</h2></div></div>
+    <p style="margin-bottom:14px">수업 시간: <b style="color:var(--gold)">20:30 – 22:00</b> · 플랫폼: 클래스인 (100% 복습 가능)</p>
+    <div class="grid2">
+      <div class="card">
+        <p class="tag">5단계 서술형 훈련</p>
+        <h3>완벽한 답안 작성 프로세스</h3>
+        <ul>
+          <li>핵심 조건과 단서 명시 — 문제의 의도 파악</li>
+          <li>순서도 작성 — 논리적 플로우 기획</li>
+          <li>공식 및 수학적 정의 활용 — 정확한 근거 제시</li>
+          <li>논리적 연결어 작성 — 감점 없는 문장 구조</li>
+          <li>전문 강사의 1:1 첨삭 — 개별 피드백</li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="tag">실전 집중 훈련</p>
+        <h3>인근 지역 과년도 기출 기반</h3>
+        <p style="margin-top:8px">동래·연제·금정·부산진 권역 + 강남 3구 기출문제를 폭넓게 반영한 실전형 서술형 훈련. 매주 13~14문항 × 3주 = <b style="color:var(--gold)">총 40문항</b>의 자체 제작 교재로 진행합니다.</p>
+        <div class="chiprow" style="margin-top:14px">
+          <span class="chip">주 2회</span>
+          <span class="chip">화·목 20:30</span>
+          <span class="chip">실시간 첨삭</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── SPECIAL 2 ───────── -->
+  <section class="section">
+    <div class="section-head"><span class="num">07</span><div><p class="label">Special 2</p><h2>내신 대비 기출 특화 수업</h2></div></div>
+    <p style="margin-bottom:14px">수업 시간: <b style="color:var(--gold)">20:30 – 22:00</b></p>
+    <div class="grid2">
+      <div class="card">
+        <h3>강남 3구 기출문제</h3>
+        <p style="margin-top:8px">강남·서초·송파의 폭넓은 출제 패턴을 반영해 고난도·킬러 문항까지 완벽 대비. 기본+응용 단계별 학습으로 안정적인 실력 향상.</p>
+        <div class="chiprow" style="margin-top:14px">
+          <span class="chip">고난도</span>
+          <span class="chip">킬러 문항</span>
+          <span class="chip">변형 출제</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>오르조 학습 앱 활용</h3>
+        <ul>
+          <li>실시간 학생 학습 상태 및 풀이 과정 데이터 확인</li>
+          <li>개인별 맞춤 오답 노트 자동 생성·제공</li>
+          <li>취약점 즉각 보완 및 밀착 추적 관리</li>
+          <li>학부모 알림톡 연동 — 주간 학습 리포트</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── PROMISE ───────── -->
+  <section class="section">
+    <div class="section-head"><span class="num">08</span><div><p class="label">Promise</p><h2>완벽을 디자인하는 자사관의 약속</h2></div></div>
+    <div class="pillars">
+      <div class="pillar"><span class="no">01</span><h4>정밀한 진단</h4><p>5월 진단평가 + 미리보는 기말고사 데이터 기반 분석</p></div>
+      <div class="pillar"><span class="no">02</span><h4>완벽한 보완</h4><p>빈틈없는 개별 클리닉과 실시간 오답 관리</p></div>
+      <div class="pillar"><span class="no">03</span><h4>압도적 실력</h4><p>강남 3구 수준의 기출 및 5단계 서술형 훈련</p></div>
+    </div>
+  </section>
+
+  <!-- ───────── CLOSING ───────── -->
+  <div class="closing">
+    <p class="tag">의대관에 B는 없다</p>
+    <h2>불안감은 <b>확신</b>으로,<br>과정은 <b>결과</b>로 증명합니다.</h2>
+    <p class="sub">2026학년도 1학기 기말고사, 과사람 자사관과 함께 완벽하게 대비하십시오.</p>
+  </div>
+
+  <footer>과사람수학 · 자사관 프로젝트 · 2026</footer>
+
+</div>
+</body>
+</html>
