@@ -69,6 +69,60 @@
   .stat .l{color:#9a9a9a;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;margin-top:4px}
   .note{background:#0e0e0e;border:1px dashed #2a2a2a;padding:14px 16px;border-radius:4px;color:#b8b8b8;font-size:13.5px;margin-top:14px}
   .note b{color:var(--gold)}
+
+  /* ─── 표 가로 스크롤 (모바일 대응) ─── */
+  .table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .table-wrap table{min-width:520px}
+
+  /* ─── 모바일 최적화 (≤640px) ─── */
+  @media(max-width:640px){
+    body{line-height:1.6;font-size:14.5px}
+    .wrap{padding:24px 16px}
+    h1{font-size:26px;line-height:1.25;margin:12px 0 10px}
+    h2{font-size:20px}
+    h3{font-size:17px}
+    p{font-size:14px}
+    .label{font-size:11px;letter-spacing:.25em}
+    .hero{padding-bottom:28px;margin-bottom:32px}
+    .hero .yr{font-size:11px;padding:3px 10px;margin-bottom:14px}
+    .hero p.lead{font-size:15px}
+    .section{margin:40px 0}
+    .section-head{gap:10px;padding-bottom:12px;margin-bottom:20px;flex-wrap:wrap;align-items:center}
+    .section-head .num{font-size:30px}
+    .grid2,.grid3,.grid4,.pillars{grid-template-columns:1fr !important;gap:14px}
+    .card{padding:18px}
+    .card .tag{letter-spacing:.22em;font-size:10.5px}
+    .card li{font-size:14px}
+    .week{padding:18px 18px;border-left-width:3px}
+    .week .d{font-size:11px;letter-spacing:.18em}
+    .week h4{font-size:17px;margin:6px 0 10px}
+    .week .items{grid-template-columns:1fr;gap:0;margin-top:6px}
+    .week .items div{font-size:14px;padding:8px 0;line-height:1.5}
+    .chip{font-size:12px;padding:5px 10px}
+    th,td{padding:9px 10px;font-size:13px}
+    th{font-size:11px;letter-spacing:.04em}
+    td .dday{font-size:11px;display:inline-block;margin-left:4px}
+    .stat-row{gap:10px}
+    .stat{padding:12px}
+    .stat .n{font-size:22px}
+    .stat .l{font-size:11px;letter-spacing:.12em}
+    .pillar{padding:22px 16px}
+    .pillar .no{font-size:30px}
+    .pillar h4{font-size:16px}
+    .closing{margin:44px 0 20px;padding:28px 18px}
+    .closing h2{font-size:18px;line-height:1.55}
+    .closing p.sub{font-size:13.5px}
+    .closing p.tag{letter-spacing:.25em}
+    footer{padding:22px 12px;font-size:11.5px;letter-spacing:.15em;margin-top:32px}
+    .note{padding:12px 14px;font-size:13px;line-height:1.6}
+  }
+
+  /* ─── 초소형 화면 (≤380px) ─── */
+  @media(max-width:380px){
+    .wrap{padding:20px 14px}
+    h1{font-size:23px}
+    .week .items div{font-size:13.5px}
+  }
 </style>
 </head>
 <body>
@@ -171,6 +225,7 @@
     <div class="section-head"><span class="num">03</span><div><p class="label">School Schedule</p><h2>학교별 1학기 기말 일정</h2></div></div>
     <p style="margin-bottom:14px">71명의 학생이 다니는 31개교 시험일정 — 시험일 기준 D-1 직전보강·시험지 수거·결과 분석을 학교별로 분산 운영합니다.</p>
 
+    <div class="table-wrap">
     <table>
       <thead>
         <tr><th>일정</th><th>학교</th></tr>
@@ -187,6 +242,7 @@
         <tr><td>7/1 (수) ~ 7/2 (목)</td><td>사직중 · 부곡여자중</td></tr>
       </tbody>
     </table>
+    </div>
   </section>
 
   <!-- ───────── STEP 1 ───────── -->
