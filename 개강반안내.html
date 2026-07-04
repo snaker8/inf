@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WP 과사람 자사관 · 예비고1 확정반 안내</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF7F2;
+    --ink:#2B2620;
+    --ink-soft:#6E6459;
+    --gold:#C8A265;
+    --gold-deep:#A9853F;
+    --line:#E7DECF;
+    --card:#FFFFFF;
+    --black:#1E1B17;
+    --blue:#3D5A80;
+    --blue-soft:#EEF3F8;
+    --black-soft:#F0EEEB;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Noto Sans KR',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{max-width:520px;margin:0 auto;padding:0 0 64px}
+
+  /* ── Hero ── */
+  .hero{
+    text-align:center;
+    padding:56px 28px 40px;
+    position:relative;
+  }
+  .hero::after{
+    content:"";
+    display:block;
+    width:56px;height:1px;
+    background:var(--gold);
+    margin:32px auto 0;
+  }
+  .brand{
+    font-family:'Cormorant Garamond',serif;
+    font-size:15px;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+    margin-bottom:6px;
+  }
+  .brand-ko{
+    font-size:13px;
+    letter-spacing:.42em;
+    color:var(--ink-soft);
+    font-weight:500;
+    margin-bottom:34px;
+  }
+  .hero h1{
+    font-weight:900;
+    font-size:34px;
+    line-height:1.28;
+    letter-spacing:-.01em;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--gold-deep);
+  }
+  .hero .sub{
+    margin-top:16px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    font-weight:400;
+    letter-spacing:.02em;
+  }
+  .confirm-badge{
+    display:inline-block;
+    margin-top:22px;
+    border:1px solid var(--gold);
+    color:var(--gold-deep);
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.24em;
+    padding:7px 20px 6px 22px;
+    border-radius:999px;
+    background:#fff;
+  }
+
+  /* ── Intro line ── */
+  .intro{
+    padding:34px 32px 8px;
+    text-align:center;
+  }
+  .intro p{
+    font-size:15px;
+    color:var(--ink-soft);
+    word-break:keep-all;
+  }
+  .intro strong{color:var(--ink);font-weight:700}
+
+  /* ── Timeline section ── */
+  .section-label{
+    text-align:center;
+    margin:46px 0 22px;
+  }
+  .section-label .en{
+    font-family:'Cormorant Garamond',serif;
+    font-size:13px;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+    display:block;
+    margin-bottom:4px;
+  }
+  .section-label .ko{
+    font-size:21px;
+    font-weight:900;
+    letter-spacing:-.01em;
+  }
+
+  /* ── Day flow (공통 시간 흐름) ── */
+  .flow{
+    margin:0 24px;
+    position:relative;
+    padding-left:18px;
+  }
+  .flow::before{
+    content:"";
+    position:absolute;
+    left:5px;top:14px;bottom:14px;
+    width:1px;
+    background:linear-gradient(var(--gold) 0%,var(--line) 100%);
+  }
+  .flow-item{
+    position:relative;
+    padding:0 0 26px 16px;
+  }
+  .flow-item:last-child{padding-bottom:0}
+  .flow-item::before{
+    content:"";
+    position:absolute;
+    left:-17px;top:9px;
+    width:9px;height:9px;
+    border-radius:50%;
+    background:var(--bg);
+    border:2px solid var(--gold);
+  }
+  .flow-time{
+    font-family:'Cormorant Garamond',serif;
+    font-size:17px;
+    font-weight:600;
+    color:var(--gold-deep);
+    letter-spacing:.04em;
+  }
+  .flow-title{
+    font-size:17px;
+    font-weight:700;
+    margin-top:1px;
+  }
+  .flow-desc{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin-top:2px;
+    word-break:keep-all;
+  }
+
+  /* ── Track cards ── */
+  .tracks{
+    margin:26px 20px 0;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .track{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 18px rgba(43,38,32,.05);
+  }
+  .track-head{
+    padding:18px 22px 15px;
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    border-bottom:1px solid var(--line);
+  }
+  .track-name{
+    font-size:19px;
+    font-weight:900;
+    letter-spacing:.02em;
+  }
+  .track-tag{
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+  }
+  .track-body{padding:6px 22px 18px}
+  .row{
+    display:flex;
+    align-items:center;
+    padding:12px 0;
+  }
+  .row + .row{border-top:1px dashed var(--line)}
+  .row-label{
+    width:88px;
+    flex-shrink:0;
+  }
+  .row-label .t{
+    font-size:11px;
+    letter-spacing:.14em;
+    color:var(--gold-deep);
+    font-weight:700;
+    display:block;
+  }
+  .row-label .h{
+    font-size:11.5px;
+    color:var(--ink-soft);
+    letter-spacing:.02em;
+  }
+  .row-main{flex:1}
+  .row-subject{
+    font-size:15.5px;
+    font-weight:700;
+  }
+  .chip{
+    display:inline-block;
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:.06em;
+    padding:3px 11px;
+    border-radius:999px;
+    margin-top:4px;
+  }
+  .chip.core-black{background:var(--black);color:#EDE6DA}
+  .chip.core-blue{background:var(--blue);color:#fff}
+  .chip.adv{background:var(--blue-soft);color:var(--blue);border:1px solid #C9D8E8}
+  .chip.concept{background:var(--black-soft);color:var(--ink);border:1px solid var(--line)}
+
+  /* ── Common 특강 banner ── */
+  .special{
+    margin:0 20px;
+    background:var(--black);
+    color:#EDE6DA;
+    border-radius:14px;
+    padding:22px 24px;
+    text-align:center;
+  }
+  .special .en{
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:block;
+    margin-bottom:8px;
+  }
+  .special .t{
+    font-size:18px;
+    font-weight:900;
+    letter-spacing:.01em;
+  }
+  .special .time{
+    font-family:'Cormorant Garamond',serif;
+    font-size:15px;
+    color:var(--gold);
+    margin-top:3px;
+    letter-spacing:.08em;
+  }
+  .special .d{
+    font-size:13px;
+    color:#B7AD9E;
+    margin-top:8px;
+    word-break:keep-all;
+  }
+
+  /* ── Legend ── */
+  .legend{
+    margin:34px 32px 0;
+    padding-top:22px;
+    border-top:1px solid var(--line);
+  }
+  .legend h3{
+    font-size:13px;
+    letter-spacing:.18em;
+    color:var(--gold-deep);
+    font-weight:700;
+    margin-bottom:12px;
+    text-align:center;
+  }
+  .legend ul{list-style:none}
+  .legend li{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    font-size:13px;
+    color:var(--ink-soft);
+    padding:5px 0;
+    word-break:keep-all;
+  }
+  .legend .chip{margin-top:1px;flex-shrink:0}
+
+  /* ── Footer ── */
+  .footer{
+    text-align:center;
+    margin-top:52px;
+    padding:0 28px;
+  }
+  .footer::before{
+    content:"";
+    display:block;
+    width:56px;height:1px;
+    background:var(--gold);
+    margin:0 auto 30px;
+  }
+  .footer .msg{
+    font-size:15px;
+    font-weight:500;
+    word-break:keep-all;
+    line-height:1.8;
+  }
+  .footer .msg strong{color:var(--gold-deep)}
+  .footer .brandline{
+    margin-top:26px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:14px;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .footer .contact{
+    margin-top:6px;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    letter-spacing:.06em;
+  }
+  .footer .phone{
+    display:inline-block;
+    margin-top:14px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:30px;
+    font-weight:600;
+    letter-spacing:.06em;
+    color:var(--gold-deep);
+    text-decoration:none;
+    border-top:1px solid var(--line);
+    padding-top:12px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="brand">WP GWASARAM</div>
+    <div class="brand-ko">과사람 자사관</div>
+    <h1>예비고1<br><em>확정반</em> 안내</h1>
+    <p class="sub">고교 유형별 맞춤 트랙으로,<br>고등 수학의 첫 단추를 완성합니다.</p>
+    <span class="confirm-badge">2026년 7월 · 개강 확정</span>
+  </header>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <p>전국단위 자사고 · 광역 자사고 · 일반고,<br>
+    진학 고교에 따라 <strong>수업 강도와 특화 과목</strong>이 달라집니다.</p>
+  </div>
+
+  <!-- TRACKS -->
+  <div class="section-label">
+    <span class="en">Track Curriculum</span>
+    <span class="ko">트랙별 커리큘럼</span>
+  </div>
+
+  <div class="tracks">
+
+    <div class="track">
+      <div class="track-head">
+        <span class="track-name">전사고반</span>
+        <span class="track-tag">Track 01</span>
+      </div>
+      <div class="track-body">
+        <div class="row">
+          <div class="row-label"><span class="t">수업</span><span class="h">17:30–20:30</span></div>
+          <div class="row-main">
+            <div class="row-subject">공통수학 1, 2</div>
+            <span class="chip core-black">코어블랙</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label"><span class="t">특화</span><span class="h">20:30–22:00</span></div>
+          <div class="row-main">
+            <div class="row-subject">대수</div>
+            <span class="chip core-blue">코어블루</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track">
+      <div class="track-head">
+        <span class="track-name">광사고반</span>
+        <span class="track-tag">Track 02</span>
+      </div>
+      <div class="track-body">
+        <div class="row">
+          <div class="row-label"><span class="t">수업</span><span class="h">17:30–20:30</span></div>
+          <div class="row-main">
+            <div class="row-subject">공통수학 1, 2</div>
+            <span class="chip core-blue">코어블루</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label"><span class="t">특화</span><span class="h">20:30–22:00</span></div>
+          <div class="row-main">
+            <div class="row-subject">대수</div>
+            <span class="chip adv">응용심화</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track">
+      <div class="track-head">
+        <span class="track-name">일반고반</span>
+        <span class="track-tag">Track 03</span>
+      </div>
+      <div class="track-body">
+        <div class="row">
+          <div class="row-label"><span class="t">수업</span><span class="h">17:30–20:30</span></div>
+          <div class="row-main">
+            <div class="row-subject">공통수학 1, 2</div>
+            <span class="chip core-blue">코어블루</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row-label"><span class="t">특화</span><span class="h">20:30–22:00</span></div>
+          <div class="row-main">
+            <div class="row-subject">확률과 통계</div>
+            <span class="chip concept">개념</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 공통 특강 -->
+  <div class="section-label">
+    <span class="en">Special Lecture</span>
+    <span class="ko">자소서 특강</span>
+  </div>
+  <div class="special">
+    <span class="en">Optional</span>
+    <div class="t">자기소개서 특강</div>
+    <div class="time">13:30 – 16:30</div>
+    <div class="d">신청자에 한해 진행 — 고교 입학 전, 나를 정리하고 표현하는 힘을 기릅니다.</div>
+  </div>
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <h3>수업 형태 안내</h3>
+    <ul>
+      <li><span class="chip core-black">코어블랙</span>최상위 심화 트랙 — 고난도 문항 중심의 밀도 높은 수업</li>
+      <li><span class="chip core-blue">코어블루</span>기출 심화 — 기출 문항 분석 중심으로 실전 감각을 완성하는 수업</li>
+      <li><span class="chip adv">응용심화</span>개념 위 응용력을 끌어올리는 확장 수업</li>
+      <li><span class="chip concept">개념</span>기본 개념을 정확하게 세우는 수업</li>
+    </ul>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="msg">고등학교 3년의 방향은<br><strong>예비고1 여름</strong>부터 결정됩니다.<br>과사람 자사관이 함께하겠습니다.</p>
+    <div class="brandline">WP GWASARAM JASAGWAN</div>
+    <div class="contact">사직역 3번 출구 도보 5분 · 사직센터빌딩 6층</div>
+    <a class="phone" href="tel:0515023113">051 . 502 . 3113</a>
+  </footer>
+
+</div>
+</body>
+</html>
