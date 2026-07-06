@@ -242,6 +242,18 @@
   .chip.core-blue{background:var(--blue);color:#fff}
   .chip.adv{background:var(--blue-soft);color:var(--blue);border:1px solid #C9D8E8}
   .chip.concept{background:var(--black-soft);color:var(--ink);border:1px solid var(--line)}
+  .tag{
+    display:inline-block;
+    font-size:10.5px;
+    font-weight:700;
+    letter-spacing:.14em;
+    padding:2px 9px;
+    border-radius:999px;
+    margin-left:6px;
+    vertical-align:2px;
+  }
+  .tag.req{background:var(--gold-deep);color:#fff}
+  .tag.opt{background:#fff;color:var(--gold-deep);border:1px solid var(--gold)}
 
   /* ── Common 특강 banner ── */
   .special{
@@ -390,7 +402,7 @@
     <div class="flow-item">
       <div class="flow-time">20:30 – 22:00</div>
       <div class="flow-title">특화 수업</div>
-      <div class="flow-desc">트랙별 특화 과목 심화</div>
+      <div class="flow-desc">자사고 필수 · 광사고/일반고 선택</div>
     </div>
   </div>
 
@@ -418,7 +430,7 @@
         <div class="row">
           <div class="row-label"><span class="t">특화</span><span class="h">20:30–22:00</span></div>
           <div class="row-main">
-            <div class="row-subject">대수</div>
+            <div class="row-subject">대수 심화<span class="tag req">필수</span></div>
             <span class="chip core-blue">코어블루</span>
           </div>
         </div>
@@ -441,8 +453,7 @@
         <div class="row">
           <div class="row-label"><span class="t">특화</span><span class="h">20:30–22:00</span></div>
           <div class="row-main">
-            <div class="row-subject">대수</div>
-            <span class="chip adv">응용심화</span>
+            <div class="row-subject">대수 개념 · 응용 / 확률과 통계<span class="tag opt">선택</span></div>
           </div>
         </div>
       </div>
@@ -464,8 +475,7 @@
         <div class="row">
           <div class="row-label"><span class="t">특화</span><span class="h">20:30–22:00</span></div>
           <div class="row-main">
-            <div class="row-subject">확률과 통계</div>
-            <span class="chip concept">개념</span>
+            <div class="row-subject">대수 개념 · 응용 / 확률과 통계<span class="tag opt">선택</span></div>
           </div>
         </div>
       </div>
@@ -491,8 +501,6 @@
     <ul>
       <li><span class="chip core-black">코어블랙</span>최상위 심화 트랙 — 고난도 문항 중심의 밀도 높은 수업</li>
       <li><span class="chip core-blue">코어블루</span>기출 심화 — 기출 문항 분석 중심으로 실전 감각을 완성하는 수업</li>
-      <li><span class="chip adv">응용심화</span>개념 위 응용력을 끌어올리는 확장 수업</li>
-      <li><span class="chip concept">개념</span>기본 개념을 정확하게 세우는 수업</li>
     </ul>
   </div>
 
